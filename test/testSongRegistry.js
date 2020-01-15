@@ -1,8 +1,8 @@
 const SongRegistry = artifacts.require('./SongRegistry.sol')
 
-//require('chai')
-  //.use(require('chai-as-promised'))
- // .should()
+require('chai')
+   .use(require('chai-as-promised'))
+   .should()
 
 contract('SongRegistry', ([deployer,seller,buyer]) => {
     let songregistry
@@ -54,6 +54,46 @@ contract('SongRegistry', ([deployer,seller,buyer]) => {
             assert.equal(song['purchased'], false,'purchased is correct')
             
         })
+        it('purchases song', async() => {
+            //get initial balance of seller/owner
+            let initialSellerBalance = await web3.eth.getBalance(seller);
+            //initialSellerBalance = new web3.utils.BN(initialSellerBalance)
+
+            //let buyer purchase song from seller
+            purchase = await songregistry.purchaseSong(songCount,{from: buyer, value: songPrice })
+            
+            //check song details for purchased song
+            const event = purchase.logs[0].args
+            assert.equal(event.id.toNumber(), songCount.toNumber(), 'id is matches')
+            assert.equal(event.title, songTitle, 'title matches')
+            assert.equal(event.owner, buyer,'owner matches')
+            assert.equal(event.price, songPrice, 'price matches')
+            assert.equal(event.purchased,true,'purchased is correct')
+
+            //check to see whether seller recieved funds
+            let newBalance = await web3.eth.getBalance(seller)
+               
+            //update seller balance
+           const exepectedSellerBalance = Number(initialSellerBalance) + Number(songPrice)
+
+           assert.equal(newBalance, Number(exepectedSellerBalance),'seller successfully received funds')
+
+           //FAILURES
+           //=======================
+           //buyer purchases product with invalid id
+            await songregistry.purchaseSong(26, { from: buyer, value: songPrice}).should.be.rejected;  
+            //buyer has insufficient funds
+             await songregistry.purchaseSong(songCount, { from: buyer, value: web3.utils.toWei('0.2', 'Ether') }).should.be.rejected;  
+            //buyer has too much funds
+              await songregistry.purchaseSong(songCount, { from: buyer, value: web3.utils.toWei('3', 'Ether') }).should.be.rejected;  
+            //buyer purchases a song twice
+            await songregistry.purchaseSong(songCount, { from: buyer, value: songPrice}).should.be.rejected;  
+            //buyer is also owner
+            await songregistry.purchaseSong(songCount, { from: seller, value: songPrice}).should.be.rejected;  
+        })
+
     })
+
+
 
 })

@@ -88,10 +88,11 @@ contract SongRegistry {
         //mark the song as purchased
         song.purchased = true;
         //update the purchased product in the mapping
-        songs[id] = song;
+        songs[_id] = song;
         //emit event to declare song has been purchased successfully
         emit SongPurchased(songCount,song.title,song.price,msg.sender,true);
 
+        
 
 
 
