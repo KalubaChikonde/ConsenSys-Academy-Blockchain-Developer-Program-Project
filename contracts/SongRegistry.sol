@@ -14,7 +14,7 @@ contract SongRegistry {
         uint id;
         string title;
         uint price;
-        address owner;
+        address payable owner;
         bool purchased;
     }
 
@@ -25,9 +25,19 @@ contract SongRegistry {
        uint id,
        string title,
        uint price,
-       address owner,
+       address payable owner,
        bool purchased
     );
+
+    event SongPurchased(
+       uint id,
+       string title,
+       uint price,
+       address payable owner,
+       bool purchased
+    );
+
+
 
    //store songs in array
     Song[] public Songs;
@@ -36,7 +46,7 @@ contract SongRegistry {
         name = "Afrobeats Music Store";
     }
 
-    //a function to register songs
+    //function to register a song
     function registerSong(string memory _title,uint _price) public {
         //check if title is valid
         require(bytes(_title).length > 0, "Invalid song title.");
@@ -55,7 +65,38 @@ contract SongRegistry {
     function getNumberOfSongs() external view returns(uint) {
     // return the length of the song array
     return Songs.length;
-  }
+    }
+    //function to buy a song
+    function purchaseSong(uint _id) public payable {
+        //get the song 
+        Song memory song = songs[_id];
+        //check that the product id is valid
+        require(song.id > 0 &&  song.id <= songCount);
+        //check that the song has not been already purchased
+        require(!song.purchased,'Sorry! This song has already been purchased.');
+        //check that the ether sent is equal to the song price
+        require(msg.value == song.price, 'Insufficient funds or Too much! It must be exact!');
+        //get the seller/owner 
+        address payable owner = song.owner;
+        //check that the buyer is not the seller/owner
+        require(owner != msg.sender);
+        
+        //transfer ownership of the song to the buyer
+        song.owner = msg.sender;
+        //pay the owner 
+        address(owner).transfer(msg.value);
+        song.purchased = true;
+        //update the product
+        songs[id] = song;
+        //emit event 
+        emit SongPurchased(songCount,song.title,song.price,msg.sender,true);
+
+
+
+
+
+    }
+  
 
 
     

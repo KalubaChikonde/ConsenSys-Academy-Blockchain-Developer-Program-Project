@@ -31,6 +31,7 @@ contract('SongRegistry', ([deployer,seller,buyer]) => {
         const songPrice = web3.utils.toWei('1', 'Ether')
 
         before(async () => {
+            //registers a song and assigns it to object product
             product = await songregistry.registerSong(songTitle,songPrice, {from: seller})
             //get number of songs
             songCount = await songregistry.songCount()
@@ -39,10 +40,13 @@ contract('SongRegistry', ([deployer,seller,buyer]) => {
 
         it('registers songs', async() => {
             //check that there is 1 song available
+            //we check that registering the song count increased the song count by 1
             assert.equal(songCount,1)
             assert.equal(count,1)
 
             //check song details
+            //we get the first song in array of songs to check whether 
+            //the song that was registered has the correct details 
             let song = await songregistry.Songs(0)
             assert.equal(song['owner'], seller, 'owner matches')
             assert.equal(song['title'], songTitle, 'title matches')
