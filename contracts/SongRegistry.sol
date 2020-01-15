@@ -68,7 +68,7 @@ contract SongRegistry {
     }
     //function to buy a song
     function purchaseSong(uint _id) public payable {
-        //get the song 
+        //get the song from the mapping
         Song memory song = songs[_id];
         //check that the product id is valid
         require(song.id > 0 &&  song.id <= songCount);
@@ -76,7 +76,7 @@ contract SongRegistry {
         require(!song.purchased,'Sorry! This song has already been purchased.');
         //check that the ether sent is equal to the song price
         require(msg.value == song.price, 'Insufficient funds or Too much! It must be exact!');
-        //get the seller/owner 
+        //get the seller/owner and store to variable owner
         address payable owner = song.owner;
         //check that the buyer is not the seller/owner
         require(owner != msg.sender);
@@ -85,10 +85,11 @@ contract SongRegistry {
         song.owner = msg.sender;
         //pay the owner 
         address(owner).transfer(msg.value);
+        //mark the song as purchased
         song.purchased = true;
-        //update the product
+        //update the purchased product in the mapping
         songs[id] = song;
-        //emit event 
+        //emit event to declare song has been purchased successfully
         emit SongPurchased(songCount,song.title,song.price,msg.sender,true);
 
 
