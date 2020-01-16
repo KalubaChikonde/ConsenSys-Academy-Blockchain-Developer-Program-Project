@@ -76,16 +76,27 @@ App = {
     
       // Use our contract to retrieve and mark the adopted pets
       //check this 
-      //return App.markPurchased();
+       //  return App.markPurchased();
     });
+  
 
     return App.bindEvents();
+    
+    
   },
 
   bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handlePurchase);
+    $(document).on('click', '.btn-adopt', App.purchaseItem);
+   
+    
   },
 
+  markPurchased: function() {
+
+   $("#buyButton").text("Success").attr('disabled', true);
+   // petTemplate.find('.btn-adopt').text("Success").attr('disabled', true);
+
+  },
   // markPurchased: function(buyers, account) {
   //   /*
   //    * Replace me...
@@ -166,6 +177,8 @@ App = {
         console.log(err.message);
       });
     });
+       // App.markPurchased();
+       
   }
 
 

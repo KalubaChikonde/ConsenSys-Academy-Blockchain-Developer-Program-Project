@@ -1,6 +1,8 @@
-pragma solidity >=0.4.22 < 0.6.0;
+pragma solidity >=0.5.0 < 0.6.0;
 
-contract SongRegistry {
+import "./Owned.sol";
+
+contract SongRegistry is Owned {
     string public name;
 
      //store songs in mapping
@@ -14,7 +16,7 @@ contract SongRegistry {
         uint id;
         string title;
         uint price;
-        address payable owner;
+        address payable Owner;
         bool purchased;
     }
 
@@ -25,7 +27,7 @@ contract SongRegistry {
        uint id,
        string title,
        uint price,
-       address payable owner,
+       address payable Owner,
        bool purchased
     );
 
@@ -33,7 +35,7 @@ contract SongRegistry {
        uint id,
        string title,
        uint price,
-       address payable owner,
+       address payable Owner,
        bool purchased
     );
 
@@ -43,10 +45,14 @@ contract SongRegistry {
     Song[] public Songs;
 
    //store buyers
-   //mapping (uint => address[]) public buyers;
-    address[] public buyers;
+    mapping (uint => address) public buyers;
+   // address[] public buyers;
     constructor() public {
         name = "Afrobeats Music Store";
+        registerSong("Risky",1);
+        registerSong("Joro",1);
+        registerSong("Billionaire",1);
+
     }
 
     //function to register a song
@@ -83,14 +89,14 @@ contract SongRegistry {
         //check that the ether sent is equal to the song price
         require(msg.value == song.price, 'Insufficient funds or Too much! It must be exact!');
         //get the seller/owner and store to variable owner
-        address payable owner = song.owner;
+        address payable seller = song.Owner;
         //check that the buyer is not the seller/owner
-        // require(owner != msg.sender);
+          require(seller != msg.sender);
         
         //transfer ownership of the song to the buyer
-        song.owner = msg.sender;
+        song.Owner = msg.sender;
         //pay the owner 
-        address(owner).transfer(msg.value);
+        address(seller).transfer(msg.value);
         //mark the song as purchased
         song.purchased = true;
         //update the purchased product in the mapping
@@ -103,12 +109,14 @@ contract SongRegistry {
     
     }
     
-    function getBuyers() external view returns(address[] memory) {
+   // function getBuyers() external view returns(address[] memory) {
     // return the length of the song array
-    return buyers;
-    }
+  //  return buyers;
+  //  }
 
-
+//     function kill() private onlyOwner {
+//     selfdestruct(owner);
+//   }
     
 
 }
