@@ -38,7 +38,7 @@ contract('SongRegistry', ([deployer,seller,buyer]) => {
             count = await songregistry.getNumberOfSongs() 
         })
 
-        it('registers songs', async() => {
+        it('test song registration', async() => {
             //check that there is 1 song available
             //we check that registering the song count increased the song count by 1
             assert.equal(songCount,1)
@@ -54,7 +54,7 @@ contract('SongRegistry', ([deployer,seller,buyer]) => {
             assert.equal(song['purchased'], false,'purchased is correct')
             
         })
-        it('purchases song', async() => {
+        it('test song purchase', async() => {
             //get initial balance of seller/owner
             let initialSellerBalance = await web3.eth.getBalance(seller);
             //initialSellerBalance = new web3.utils.BN(initialSellerBalance)

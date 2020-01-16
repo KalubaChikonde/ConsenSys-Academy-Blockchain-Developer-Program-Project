@@ -42,6 +42,9 @@ contract SongRegistry {
    //store songs in array
     Song[] public Songs;
 
+   //store buyers
+   //mapping (uint => address[]) public buyers;
+    address[] public buyers;
     constructor() public {
         name = "Afrobeats Music Store";
     }
@@ -89,16 +92,18 @@ contract SongRegistry {
         song.purchased = true;
         //update the purchased product in the mapping
         songs[_id] = song;
+        buyers[_id] = msg.sender;
+    
         //emit event to declare song has been purchased successfully
         emit SongPurchased(songCount,song.title,song.price,msg.sender,true);
 
-        
-
-
-
-
+    
     }
-  
+    
+    function getBuyers() external view returns(address[] memory) {
+    // return the length of the song array
+    return buyers;
+    }
 
 
     

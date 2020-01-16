@@ -4,16 +4,14 @@ App = {
 
   init: async function() {
     // Load pets.
-    $.getJSON('../pets.json', function(data) {
+    $.getJSON('../songs.json', function(data) {
       var petsRow = $('#petsRow');
       var petTemplate = $('#petTemplate');
 
       for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name);
+        petTemplate.find('.panel-title').text(data[i].title);
         petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
+        petTemplate.find('.price').text(data[i].price);
         petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
 
         petsRow.append(petTemplate.html());
@@ -24,17 +22,43 @@ App = {
   },
 
   initWeb3: async function() {
-    /*
-     * Replace me...
-     */
+          // Modern dapp browsers...
+      if (window.ethereum) {
+        App.web3Provider = window.ethereum;
+        try {
+          // Request account access
+          await window.ethereum.enable();
+        } catch (error) {
+          // User denied account access...
+          console.error("User denied account access")
+        }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+        App.web3Provider = window.web3.currentProvider;
+      }
+      // If no injected web3 instance is detected, fall back to Ganache
+      else {
+        App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+      }
+      web3 = new Web3(App.web3Provider);
 
     return App.initContract();
   },
 
   initContract: function() {
-    /*
-     * Replace me...
-     */
+    $.getJSON('SongRegistry.json', function(data) {
+      // Get the necessary contract artifact file and instantiate it with truffle-contract
+      var SongRegistryArtifact = data;
+      App.contracts.SongRegistry = TruffleContract(SongRegistryArtifact);
+    
+      // Set the provider for our contract
+      App.contracts.SongRegistry.setProvider(App.web3Provider);
+    
+      // Use our contract to retrieve and mark the adopted pets
+      //check this 
+      return App.markPurchased();
+    });
 
     return App.bindEvents();
   },
@@ -43,20 +67,53 @@ App = {
     $(document).on('click', '.btn-adopt', App.handleAdopt);
   },
 
-  markAdopted: function(adopters, account) {
+  markPurchased: function(buyers, account) {
     /*
      * Replace me...
      */
+    var songRegistryInstance;
+
+    App.contracts.SongRegistry.deployed().then(function(instance) {
+      songRegistryInstance = instance;
+
+      return songRegistryInstance.getBuyers.call();
+    }).then(function(buyers) {
+      for (i = 0; i < buyers.length; i++) {
+        if (buyers[i] !== '0x0000000000000000000000000000000000000000') {
+          $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
+        }
+      }
+    }).catch(function(err) {
+      console.log(err.message);
+    });
+
   },
 
-  handleAdopt: function(event) {
+  handlePurchase: function(event) {
     event.preventDefault();
 
-    var petId = parseInt($(event.target).data('id'));
+    var songId = parseInt($(event.target).data('id'));
 
-    /*
-     * Replace me...
-     */
+    var songRegistryInstance;
+
+    web3.eth.getAccounts(function(error, accounts) {
+      if (error) {
+        console.log(error);
+      }
+
+      var account = accounts[0];
+
+      App.contracts.Adoption.deployed().then(function(instance) {
+        songRegistryInstance = instance;
+
+        // Execute adopt as a transaction by sending account
+        return songRegistryInstance.purchaseSong(songId, {from: account});
+      }).then(function(result) {
+        return App.markPurchased();
+      }).catch(function(err) {
+        console.log(err.message);
+      });
+    });
   }
 
 };
