@@ -65,14 +65,17 @@ contract SongRegistry {
 
     }
 
+    //fetch number of songs
     function getNumberOfSongs() external view returns(uint) {
     // return the length of the song array
     return Songs.length;
     }
     //function to buy a song
-    function purchaseSong(uint _id) public payable {
+    function purchaseSong(uint _id) payable public {
         //get the song from the mapping
         Song memory song = songs[_id];
+        //check whether there is at least one song
+        require(songCount > 0);
         //check that the product id is valid
         require(song.id > 0 &&  song.id <= songCount);
         //check that the song has not been already purchased
@@ -82,7 +85,7 @@ contract SongRegistry {
         //get the seller/owner and store to variable owner
         address payable owner = song.owner;
         //check that the buyer is not the seller/owner
-        require(owner != msg.sender);
+        // require(owner != msg.sender);
         
         //transfer ownership of the song to the buyer
         song.owner = msg.sender;

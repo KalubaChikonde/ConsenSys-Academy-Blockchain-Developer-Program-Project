@@ -2,73 +2,73 @@
     {
       "id": 0,
       "title": "Risky",
-      "price": "1 Eth",
+      "price": 1,
       "picture": "images/Davido-Risky.jpg"
     },
     {
       "id": 1,
       "title": "Joro",
-      "price": "1 Eth",
+      "price": 1 ,
       "picture": "images/JORO.jpg"
     },
     {
       "id": 2,
       "title": "Billionaire",
-      "price": "1 Eth",
+      "price": 1 ,
       "picture": "images/Billionaire.jpg"
     },
     {
       "id": 3,
       "title": "Kontrol",
-      "price": "1.6 Eth",
+      "price": 1.6,
       "picture": "images/Kontrol.jpg"
     },
     {
       "id": 4,
       "title": "Rora",
-      "price": "1.2 Eth",
+      "price": 1.2,
       "picture": "images/Rora.jpg"
     },
     {
       "id": 5,
       "title": "Beginning",
-      "price": "1 Eth",
+      "price": 1,
       "picture": "images/Beginning.jpg"
     },
     {
       "id": 6,
       "title": "Blow My Mind",
-      "price": "1.5 Eth",
+      "price": 1.5,
       "picture": "images/blow-my-mind.jpg"
     },
     {
       "id": 7,
       "title": "Owo Mi Da",
-      "price": "2 Eth",
+      "price": 2,
       "picture": "images/Owo-Mi-Da.jpg"
     },
     {
       "id": 8,
       "title": "Anybody",
-      "price": "1.3 Eth",
+      "price": 1.3,
       "picture": "images/anybody.jpg"
     },
     {
       "id": 9,
       "title": "Umlilo",
-      "price": "1.5 Eth",
+      "price": 1.5,
       "picture": "images/Umlilo.jpg"
     },
     {
       "id": 10,
       "title": "Gbona",
-      "price": "1 Eth",
+      "price": 1,
       "picture": "images/gbona.jpg"
     },
     {
       "id": 11,
       "title": "Dumebi",
-      "price": "1.8 Eth",
+      "price": 1.8,
       "picture": "images/dumebi.jpg"
     }
     

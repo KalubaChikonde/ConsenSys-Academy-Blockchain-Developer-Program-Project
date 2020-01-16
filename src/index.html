@@ -27,6 +27,15 @@
         </div>
       </div>
 
+      <div class="col-md-12" id="article-list">
+        <div class="row">
+          <div class="col-lg-12">
+            <p id="account" class="welcome pull-right"></p>
+            <p id="accountBalance" class="welcome pull-left"></p>
+          </div>
+        </div>
+  
+
       <div id="petsRow" class="row">
         <!-- PETS LOAD HERE -->
       </div>
@@ -39,10 +48,11 @@
             <h3 class="panel-title">Risky</h3>
           </div>
           <div class="panel-body">
+            <strong>Id</strong>: <span class="pet-age">0</span><br/>
             <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="images/Davido-Risky.jpg" data-holder-rendered="true">
             <br/><br/>
-            <strong>Price</strong>: <span class="price">1 Eth</span><br/>
-            <button class="btn btn-default btn-adopt" type="button" data-id="0">Buy</button>
+            <strong>Price (ETH) </strong>: <span id = "song_price" class="price">1</span><br/>
+            <button class="btn btn-default btn-adopt" id="buyButton" type="button" data-id="0" data-value="0" onclick="App.purchaseItem(); return false;">Buy</button>
           </div>
         </div>
       </div>
