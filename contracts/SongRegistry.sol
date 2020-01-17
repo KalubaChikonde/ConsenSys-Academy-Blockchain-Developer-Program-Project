@@ -1,8 +1,12 @@
 pragma solidity >=0.5.0 < 0.6.0;
 
-import "./Owned.sol";
+//import "./Owned.sol";
+import "@openzeppelin/contracts/ownership/Ownable.sol";
 
-contract SongRegistry is Owned {
+////import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/ownership/Ownable.sol";
+
+
+contract SongRegistry is Ownable {
     string public name;
 
      //store songs in mapping
@@ -114,9 +118,13 @@ contract SongRegistry is Owned {
   //  return buyers;
   //  }
 
-//     function kill() private onlyOwner {
-//     selfdestruct(owner);
-//   }
+     function kill() private onlyOwner {
+        if(msg.sender == owner()) selfdestruct(address(uint160(owner()))); // cast owner to address payable
+      }
+
+      
+
+
     
 
 }
