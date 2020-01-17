@@ -1,6 +1,6 @@
 pragma solidity >=0.5.0 < 0.6.0;
 
-//import "./Owned.sol";
+
 import "@openzeppelin/contracts/ownership/Ownable.sol";
 
 ////import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/ownership/Ownable.sol";
@@ -91,7 +91,7 @@ contract SongRegistry is Ownable {
         //check that the song has not been already purchased
         require(!song.purchased,'Sorry! This song has already been purchased.');
         //check that the ether sent is equal to the song price
-        require(msg.value == song.price, 'Insufficient funds or Too much! It must be exact!');
+        require(msg.value >= song.price, 'Insufficient funds or Too much! It must be exact!');
         //get the seller/owner and store to variable owner
         address payable seller = song.Owner;
         //check that the buyer is not the seller/owner
