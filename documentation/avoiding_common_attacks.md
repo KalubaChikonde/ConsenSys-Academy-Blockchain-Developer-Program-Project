@@ -1,10 +1,10 @@
 # Afrobeats Song Registry Security Tools
 
-The following document outlines the project security tools implemented in the SongRegistry smart contract to ensure that the contract is not susceptible to common attacks. You can use this [link](https://blog.mythx.io/howto/a-beginners-guide-to-mythx/) to get a beginners guide to mythX in Remix. 
+The following document outlines the project security tools implemented in the SongRegistry smart contract to ensure that the contract is not susceptible to common attacks. 
 
 ## 1. MythX (Remix extension)
 
-MythX is a tool for finding smart contract weaknesses. The MythX extension for Remix was used to check for weaknesses in the `SongRegistry` contract
+MythX is a tool for finding smart contract weaknesses. The MythX extension for Remix was used to check for weaknesses in the `SongRegistry` contract. You can use this [link](https://blog.mythx.io/howto/a-beginners-guide-to-mythx/) to get a beginners guide to mythX in Remix. 
 
 
 ## 2. TxOrigin Attack
