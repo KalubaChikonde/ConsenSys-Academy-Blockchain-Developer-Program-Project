@@ -50,6 +50,17 @@ contract SongRegistry is Ownable {
 
    //store buyers
     mapping (uint => address) public buyers;
+
+    
+     bool private emergency = false;
+
+    //circut breaker modifier
+    modifier onlyInEmergency { 
+    require(emergency);  _;
+}
+
+
+
    // address[] public buyers;
     constructor() public {
         name = "Afrobeats Music Store";
@@ -118,7 +129,7 @@ contract SongRegistry is Ownable {
   //  return buyers;
   //  }
 
-     function kill() private onlyOwner {
+     function kill() public onlyOwner onlyInEmergency {
         if(msg.sender == owner()) selfdestruct(address(uint160(owner()))); // cast owner to address payable
       }
 

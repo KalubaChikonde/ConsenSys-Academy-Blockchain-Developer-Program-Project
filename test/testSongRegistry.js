@@ -14,7 +14,8 @@ contract('SongRegistry', ([deployer,seller,buyer]) => {
         songregistry = await SongRegistry.deployed()
     }) 
 
-    //checks that the smart contract has an address
+    //checks that the smart contract has an address which means 
+    //it was deployed successfully 
     describe('deploying of contract', async() => {
         it('contract deployment successful', async() => {
             var contractAddress = await songregistry.address
