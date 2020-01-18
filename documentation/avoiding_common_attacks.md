@@ -30,7 +30,7 @@ We avoid loops that do not have a fixed number of iterations becuase loops can g
 ## 4. Logic Bugs
 
 Simple programming mistakes can lead to logical errors. That is, they can cause the contract to behave differently to its stated rules. We have mitigated this by:
-* creating test functions for the SongRegistry contract and implementing unit test in javascript .
+* creating test functions for the SongRegistry contract and implementing unit tests in javascript .
 * following Solidity coding standards and general coding best practices.
 
 
