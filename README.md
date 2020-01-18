@@ -2,7 +2,7 @@
 Implemented a DApp called the Afrobeats Music Store which is a song registry on the Ethereum Framework. 
 
 ## What it does
-The purpose of the DApp is to register and buy songs between different accounts. Song owners can register their songs which can be purchased by different buyers. Different Account holders can be created using Metamask.
+The purpose of the DApp is to create a platform for the registering and purchasing songs between different accounts. Song owners can register their songs which can be purchased by different buyers. Different Account holders can be created using Metamask or Ganache.
 
 ## Dependencies 
 Install these prerequisites:
