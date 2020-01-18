@@ -1,4 +1,4 @@
-# Afrobeats Song Registry Security Tools
+# Afrobeats Song Registry Security Tools and Security Development
 
 The following document outlines the project security tools implemented in the SongRegistry smart contract to ensure that the contract is not susceptible to common attacks. 
 
