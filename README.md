@@ -22,5 +22,5 @@ Install these prerequisites:
 * Testing of smart contracts was done using: 
   * Ganache
   * Kovan testnet
- * Unit testing was done using javascript(see []()
+ * Unit testing was done using javascript(see [](https://github.com/KalubaChikonde/ConsenSys-Academy-Blockchain-Developer-Program-Project/blob/master/test/testSongRegistry.js)
   * Testing promises of Mocha and Chai were used. 
