@@ -33,5 +33,6 @@ npm install lite-server --save-dev
 * Testing of smart contracts was done using: 
   * Ganache
   * Kovan testnet
+  * Remix
  * Unit testing was done using javascript - see [testSongRegistry.js](https://github.com/KalubaChikonde/ConsenSys-Academy-Blockchain-Developer-Program-Project/blob/master/test/testSongRegistry.js)
     * Mocha and Chai promises were used. 
