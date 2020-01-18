@@ -4,14 +4,12 @@ The following document outlines the project security tools implemented in the So
 
 ## 1. MythX (Remix extension)
 
-
-
+MythX is a tool for finding smart contract weaknesses. The MythX extension for Remix was used to check for weaknesses in the `SongRegistry` contract
 
 
 ## 2. TxOrigin Attack
 
 We use the global variable `msg.sender` instead of `tx.origin` for authorization. This is because `msg.sender` references the address of the sender of the current call while `tx.origin` references the address of the original sender of the transaction which may be the attack wallet. 
-
 
 
 ## 3. Gas Limit and Loops
@@ -32,8 +30,9 @@ We avoid loops that do not have a fixed number of iterations becuase loops can g
 ## 4. Logic Bugs
 
 Simple programming mistakes can lead to logical errors. That is, they can cause the contract to behave differently to its stated rules. We have mitigated this by:
-* creating test functions for the SongRegistry contract and implementing unit test in javascript 
-* following Solidity coding standards and general coding best practices
+* creating test functions for the SongRegistry contract and implementing unit test in javascript .
+* following Solidity coding standards and general coding best practices.
+
 
 ## 5. Using events to monitor contract activity
 
@@ -79,6 +78,8 @@ Events have been used to monitor the contract's activity after being deployed. U
     }
 
 ```
+
+
 ## 6. Using the Checks-Effects-Interactions Pattern
 
 The functions first perform some checks such as checking whether input is valid or whether sender has enough ether. If all checks have passed, effects to the state variables of the current contract should be made. Interactions with other contracts are the last step. For example in the `registerSong` function below, we first perform checks and then update state variables.  
