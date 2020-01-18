@@ -1,11 +1,10 @@
-# Afrobeats Song Registry Design Patterns
+# Afrobeats Song Registry Security Tools
 
-The following document outlines the project design patterns implemented in the SongRegistry smart contract. 
+The following document outlines the project security tools implemented in the SongRegistry smart contract to ensure that the contract is not susceptible to common attacks . 
 
-## 1. Restricting Access
+## 1. MythX (Remix extension)
 
-In the `SongRegistry` contract, there are certain functions which are restricted only to the admin/owner. This design pattern helps us to achieve this using the ethpm package, *OpenZeppelin*. The `Ownable` module in this package is used through inheritance. It will make available the modifier `onlyOwner`, which can be applied to your functions to restrict their use to the owner. 
-The `kill` function is restricted yo the owner in the smart contract `SongRegistry`.
+
 
 ```
 import "@openzeppelin/contracts/ownership/Ownable.sol";
