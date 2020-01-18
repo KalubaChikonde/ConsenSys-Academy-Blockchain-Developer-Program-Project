@@ -65,7 +65,7 @@
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function",
-      "signature": "0x931a889b"
+      "signature": "0x715018a6"
     },
     {
       "constant": true,
@@ -101,7 +101,7 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function",
-      "signature": "0xbeaf69b5"
+      "signature": "0xa123c33e"
     },
     {
       "constant": true,
@@ -121,14 +121,14 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function",
-      "signature": "0xf2aa8218"
+      "signature": "0x39c7639c"
     },
     {
       "inputs": [],
       "payable": false,
       "stateMutability": "view",
       "type": "function",
-      "signature": "constructor",
+      "signature": "0x931a889b",
       "constant": true,
       "name": "songCount",
       "outputs": [
@@ -169,7 +169,7 @@
       ],
       "name": "Songs",
       "type": "function",
-      "signature": "0x400c6ccde72ea009de5c531de0bac2f79d74a557583271074603fb3b16956585",
+      "signature": "0xfdf8ef0d",
       "constant": true,
       "outputs": [
         {
@@ -227,7 +227,7 @@
       ],
       "name": "buyers",
       "type": "function",
-      "signature": "0x4e92880991184dc8001396657f045bad716ee38038ba44a7a1d3ed33d044bda4",
+      "signature": "0x26b358c2",
       "constant": true,
       "outputs": [
         {
@@ -255,7 +255,7 @@
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function",
-      "signature": "0xdedbe306"
+      "signature": "0x0a276680"
     },
     {
       "constant": true,
@@ -270,7 +270,7 @@
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "constructor",
-      "signature": "0xa8ec42d8"
+      "signature": "constructor"
     },
     {
       "constant": false,
@@ -306,7 +306,7 @@
       "payable": true,
       "stateMutability": "payable",
       "type": "event",
-      "signature": "0x7b3e4ce0",
+      "signature": "0x400c6ccde72ea009de5c531de0bac2f79d74a557583271074603fb3b16956585",
       "anonymous": false
     },
     {
@@ -348,7 +348,7 @@
       "payable": false,
       "stateMutability": "view",
       "type": "event",
-      "signature": "0xf64bfaba",
+      "signature": "0x4e92880991184dc8001396657f045bad716ee38038ba44a7a1d3ed33d044bda4",
       "anonymous": false
     },
     {
@@ -366,7 +366,8 @@
         }
       ],
       "name": "OwnershipTransferred",
-      "type": "event"
+      "type": "event",
+      "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
     },
     {
       "constant": false,
@@ -384,7 +385,8 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0xdedbe306"
     },
     {
       "constant": true,
@@ -398,7 +400,8 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "signature": "0xa8ec42d8"
     },
     {
       "constant": false,
@@ -412,7 +415,8 @@
       "outputs": [],
       "payable": true,
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "signature": "0x7b3e4ce0"
     },
     {
       "constant": false,
@@ -421,7 +425,8 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0x41c0e1b5"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"songs\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"title\",\"type\":\"string\"},{\"name\":\"price\",\"type\":\"uint256\"},{\"name\":\"Owner\",\"type\":\"address\"},{\"name\":\"purchased\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"kill\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"purchaseSong\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"songCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getNumberOfSongs\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"Songs\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"title\",\"type\":\"string\"},{\"name\":\"price\",\"type\":\"uint256\"},{\"name\":\"Owner\",\"type\":\"address\"},{\"name\":\"purchased\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_title\",\"type\":\"string\"},{\"name\":\"_price\",\"type\":\"uint256\"}],\"name\":\"registerSong\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"buyers\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"title\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"price\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"Owner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"purchased\",\"type\":\"bool\"}],\"name\":\"SongRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"title\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"price\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"Owner\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"purchased\",\"type\":\"bool\"}],\"name\":\"SongPurchased\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}}},\"userdoc\":{\"methods\":{},\"notice\":\"/import \\\"github.com/OpenZeppelin/openzeppelin-solidity/contracts/ownership/Ownable.sol\\\";\"}},\"settings\":{\"compilationTarget\":{\"/Users/kalubachikonde/Consensys/Project/ConsenSys-Academy-Blockchain-Developer-Program-Project/contracts/SongRegistry.sol\":\"SongRegistry\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kalubachikonde/Consensys/Project/ConsenSys-Academy-Blockchain-Developer-Program-Project/contracts/SongRegistry.sol\":{\"keccak256\":\"0x22b62b980056d762c3443acc97d407509b8ea4477d2f342f605bc15c6aefac99\",\"urls\":[\"bzzr://323ecdff4509d4fd6161a4bb0663739b4947ad627a8e48a6d00cf986aa32aea2\"]},\"@openzeppelin/contracts/GSN/Context.sol\":{\"keccak256\":\"0x90a3995645af7562d84b9d69363ffa5ae7217714ab61e951bf7bc450f40e4061\",\"urls\":[\"bzzr://51482c01bddf23793bddee43b60ab9578a62948a4f2082def24ea792a553b055\"]},\"@openzeppelin/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xecd8ab29d9a5771c3964d0cd1788c4a5098a0081b20fb275da850a22b1c59806\",\"urls\":[\"bzzr://4950def18270142a78d503ef6b7b13bdb053f2f050cee50c883cd7cab2bb02d7\"]}},\"version\":1}",
@@ -20609,14 +20614,112 @@
       "transactionHash": "0xd321bf58f3d0c3e626b724a2cb5bcca96dbbab0e31285e7ba7621bd307cc5892"
     },
     "5777": {
-      "events": {},
+      "events": {
+        "0x400c6ccde72ea009de5c531de0bac2f79d74a557583271074603fb3b16956585": {
+          "constant": false,
+          "inputs": [
+            {
+              "name": "id",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "indexed": false,
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "Owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "purchased",
+              "type": "bool"
+            }
+          ],
+          "name": "SongRegistered",
+          "outputs": [],
+          "payable": true,
+          "stateMutability": "payable",
+          "type": "event",
+          "signature": "0x400c6ccde72ea009de5c531de0bac2f79d74a557583271074603fb3b16956585",
+          "anonymous": false
+        },
+        "0x4e92880991184dc8001396657f045bad716ee38038ba44a7a1d3ed33d044bda4": {
+          "constant": true,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "Owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "purchased",
+              "type": "bool"
+            }
+          ],
+          "name": "SongPurchased",
+          "outputs": [
+            {
+              "name": "",
+              "type": "address[]"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "event",
+          "signature": "0x4e92880991184dc8001396657f045bad716ee38038ba44a7a1d3ed33d044bda4",
+          "anonymous": false
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
       "links": {},
-      "address": "0xc4696F328cA75cc9806344fc547E83E7aC149453",
-      "transactionHash": "0x9dc133f363800b097c1387cf9c6f8f41bb1a48aaa8d60e1fb5e36ba079963665"
+      "address": "0x73bA7534b0E23cd77097825a75C6d1d5033C253C",
+      "transactionHash": "0xff20e2988aa7119d795edc40db0855b1ac97683546dfb27ab5716b1f9edde909"
     }
   },
   "schemaVersion": "3.0.6",
-  "updatedAt": "2020-01-18T19:43:47.027Z",
+  "updatedAt": "2020-01-18T19:56:41.521Z",
   "devdoc": {
     "methods": {
       "isOwner()": {
