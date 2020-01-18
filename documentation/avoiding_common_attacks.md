@@ -11,7 +11,8 @@ The `kill` function is restricted yo the owner in the smart contract `SongRegist
 import "@openzeppelin/contracts/ownership/Ownable.sol";
 contract SongRegistry is Ownable {
 ....
-
+....
+....
 function kill() public onlyOwner onlyInEmergency {
         if(msg.sender == owner()) selfdestruct(address(uint160(owner()))); // cast owner to address payable
       }
