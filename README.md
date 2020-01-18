@@ -15,12 +15,12 @@ Install these prerequisites:
 ## Challenges
 
 * Errors using Metamask.
-* Unit Testing using truffle.
+* Unit test debugging.
 
 ## Implementation
-* This DApp was developed using Solidity and web3.js
+* This DApp was developed using Solidity and web3.js.
 * Testing of smart contracts was done using: 
   * Ganache
   * Kovan testnet
- * Unit testing was done using javascript(see [testSongRegistry.js](https://github.com/KalubaChikonde/ConsenSys-Academy-Blockchain-Developer-Program-Project/blob/master/test/testSongRegistry.js))
+ * Unit testing was done using javascript - see [testSongRegistry.js](https://github.com/KalubaChikonde/ConsenSys-Academy-Blockchain-Developer-Program-Project/blob/master/test/testSongRegistry.js)
   * Testing promises of Mocha and Chai were used. 
