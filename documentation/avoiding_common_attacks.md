@@ -1,6 +1,6 @@
 # Afrobeats Song Registry Security Tools
 
-The following document outlines the project security tools implemented in the SongRegistry smart contract to ensure that the contract is not susceptible to common attacks . 
+The following document outlines the project security tools implemented in the SongRegistry smart contract to ensure that the contract is not susceptible to common attacks. You can use this [link](https://blog.mythx.io/howto/a-beginners-guide-to-mythx/) to get a beginners guide to mythX in Remix. 
 
 ## 1. MythX (Remix extension)
 
