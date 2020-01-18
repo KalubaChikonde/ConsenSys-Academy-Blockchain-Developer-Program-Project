@@ -24,6 +24,23 @@ function kill() public onlyOwner onlyInEmergency {
 
 ## 2. Fail Early and Fail Loud
 
+The `require` keyword is used throughout the contract to checck as early as possible whether certain condistions are met. This helps reduce unnecessary code execution. 
+
+```
+    function registerSong(string memory _title,uint _price) public {
+        //check if title is valid
+        require(bytes(_title).length > 0, "Invalid song title.");
+        //check if the price is valid
+        require(_price > 0, "Invalid song price.");
+        //increase song count
+        ....
+        ....
+        ....
+        ....
+    }
+```
+
+
 ## 3. Circuit Breaker
 
 ## 4. Mortal
