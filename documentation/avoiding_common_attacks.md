@@ -85,7 +85,7 @@ This gives the admin/owner the ability to stop state-changing functionalities du
 
 ## 4. Mortal
 
-This design pattern gives the admin/owner ability to destroy the contract and remove it from the blockchain using the `selfdestruct` keyword in the `kill` function. 
+This design pattern gives the admin/owner ability to destroy the contract and remove it from the blockchain using the `selfdestruct` keyword in the `kill` function. After destruction, the remaining balance is sent to the admin’s address.
 ```
 //SongRegistry.sol
 
