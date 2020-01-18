@@ -14,13 +14,13 @@ Install these prerequisites:
 
 ## Challenges
 
-* Errors using Metamask
-* Unit Testing using truffle
+* Errors using Metamask.
+* Unit Testing using truffle.
 
 ## Implementation
 * This DApp was developed using Solidity and web3.js
-* Testing of smart contracts was done using 
+* Testing of smart contracts was done using: 
   * Ganache
   * Kovan testnet
- * Unit testing was done in java script(see []()
-  * Testing promises of Mocha and Chai were used
+ * Unit testing was done using javascript(see []()
+  * Testing promises of Mocha and Chai were used. 
