@@ -26,7 +26,7 @@ contract SongRegistry is Ownable {
 
   
 
-   //event to be triggered when song is created
+   //event to be triggered when song is registered
     event SongRegistered(
        uint id,
        string title,
@@ -35,6 +35,7 @@ contract SongRegistry is Ownable {
        bool purchased
     );
 
+    //event to be triggered when song is purchased
     event SongPurchased(
        uint id,
        string title,
@@ -74,6 +75,7 @@ contract SongRegistry is Ownable {
     function registerSong(string memory _title,uint _price) public {
         //check if title is valid
         require(bytes(_title).length > 0, "Invalid song title.");
+        
         //check if the price is valid
         require(_price > 0, "Invalid song price.");
         //increase song count
@@ -124,10 +126,6 @@ contract SongRegistry is Ownable {
     
     }
     
-   // function getBuyers() external view returns(address[] memory) {
-    // return the length of the song array
-  //  return buyers;
-  //  }
 
      function kill() public onlyOwner onlyInEmergency {
         if(msg.sender == owner()) selfdestruct(address(uint160(owner()))); // cast owner to address payable
