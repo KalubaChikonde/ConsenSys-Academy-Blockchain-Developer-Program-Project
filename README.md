@@ -9,8 +9,19 @@ Install these prerequisites:
 
 * [NPM](https://nodejs.org/en/)
 * [Truffle](https://github.com/trufflesuite/truffle)
+```
+npm install -g truffle
+```
 * [Ganache](https://www.trufflesuite.com/ganache)
+* Ganache-CLI
+```
+npm install -g ganache-cli
+```
 * [Metamask](https://metamask.io)
+* [lite-server](https://www.npmjs.com/package/lite-server)
+```
+npm install lite-server --save-dev
+```
 
 ## Challenges
 
