@@ -2,7 +2,7 @@
 Implemented a DApp called the Afrobeats Music Store which is a song registry on the Ethereum Framework. 
 
 ## What it does
-The pu
+The purpose of the DApp is to register and buy songs between different accounts. Song owners can register their songs which can be purchased by different buyers. 
 
 ## Dependencies 
 Install these prerequisites:
@@ -12,3 +12,15 @@ Install these prerequisites:
 * [Ganache](https://www.trufflesuite.com/ganache)
 * [Metamask](https://metamask.io)
 
+## Challenges
+
+* Errors using Metamask
+* Unit Testing using truffle
+
+## Implementation
+* This DApp was developed using Solidity and web3.js
+* Testing of smart contracts was done using 
+  * Ganache
+  * Kovan testnet
+ * Unit testing was done in java script(see []()
+  * Testing promises of Mocha and Chai were used
