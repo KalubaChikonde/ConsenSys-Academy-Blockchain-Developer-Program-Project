@@ -2,8 +2,9 @@ Testnet:
 Kovan 
 
 Contract address:
-0x73ba7534b0e23cd77097825a75c6d1d5033c253c
+
+0x64e40d65f2d3c4b4f9817cf12f0c3e736f4bbf4a
+
 
 Link:
-
-https://kovan.etherscan.io/tx/0xd321bf58f3d0c3e626b724a2cb5bcca96dbbab0e31285e7ba7621bd307cc5892
+https://kovan.etherscan.io/tx/0x0168cb434298b6c7c1ecd541b8374f52c1fa4879269e08cb2bd25c83c4a06740

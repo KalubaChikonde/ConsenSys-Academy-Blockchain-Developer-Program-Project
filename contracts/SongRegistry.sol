@@ -128,7 +128,7 @@ contract SongRegistry is Ownable {
     
 
      function kill() public onlyOwner onlyInEmergency {
-        if(msg.sender == owner()) selfdestruct(address(uint160(owner()))); // cast owner to address payable
+       selfdestruct(address(uint160(owner()))); // cast owner to address payable
       }
 
       
