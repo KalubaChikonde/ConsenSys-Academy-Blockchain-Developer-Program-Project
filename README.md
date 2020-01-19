@@ -38,9 +38,10 @@ Once you have launched Ganache to setup a local blockchain, compile and deploy t
 ```
 $ truffle compile
 $ truffle migrate --reset
+$ truffle test
 ```
 ### 4. Setup Metamask
-Metamask can be used to get a visual representation of the local blockchain.Connect it to your local Etherum blockchain provided by Ganache (localhost 8545) and import accounts into metamask
+Metamask can be used to get a visual representation of the local blockchain.Connect it to your local Etherum blockchain provided by Ganache (localhost 8545) and import ganache accounts into metamask.
 
 ### 5. Run the Front End Application
  Run the app on a development server locally for testing/grading. We’ll use lite-server to serve our web app.  http://localhost:3000
