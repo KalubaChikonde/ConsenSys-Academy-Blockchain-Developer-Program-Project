@@ -23,6 +23,16 @@ $ npm install -g ganache-cli
 $ npm install lite-server --save-dev
 ```
 
+## Implementation
+* This DApp was developed using Solidity and web3.js.
+* Testing of smart contracts was done using: 
+  * Ganache
+  * Kovan testnet
+  * Remix
+ * Unit testing was done using javascript - see [testSongRegistry.js](https://github.com/KalubaChikonde/ConsenSys-Academy-Blockchain-Developer-Program-Project/blob/master/test/testSongRegistry.js)
+    * Mocha and Chai promises were used. 
+ * Lite-server was used to serve the front end application.
+
 ## Set-up and Initialization
 ### 1. Clone the project
 ```
@@ -53,12 +63,3 @@ $ npm run dev
 * Errors using Metamask.
 * Unit test debugging.
 
-## Implementation
-* This DApp was developed using Solidity and web3.js.
-* Testing of smart contracts was done using: 
-  * Ganache
-  * Kovan testnet
-  * Remix
- * Unit testing was done using javascript - see [testSongRegistry.js](https://github.com/KalubaChikonde/ConsenSys-Academy-Blockchain-Developer-Program-Project/blob/master/test/testSongRegistry.js)
-    * Mocha and Chai promises were used. 
- * Lite-server was used to serve the front end application.
