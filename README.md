@@ -29,12 +29,12 @@ $ npm install lite-server --save-dev
 $ git clone https://github.com/KalubaChikonde/ConsenSys-Academy-Blockchain-Developer-Program-Project.git
 $ cd ConsenSys-Academy-Blockchain-Developer-Program-Project
 ```
-### 2. Install dependencies and prerequisites
+### 2. Install dependencies and pre-requisites
 ```
 $ npm install
 ```
 ### 3. Launch Ganache
-Once you have launched Ganache to setup a local blockchain, compile and deploy the smart contracts onto the blockchain:
+Once you have launched Ganache, set-up a local blockchain, compile and deploy the smart contracts onto the blockchain:
 ```
 $ truffle compile
 $ truffle migrate --reset
