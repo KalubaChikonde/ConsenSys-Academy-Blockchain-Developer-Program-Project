@@ -32,6 +32,11 @@ $ npm install lite-server --save-dev
  * Unit testing was done using javascript - see [testSongRegistry.js](https://github.com/KalubaChikonde/ConsenSys-Academy-Blockchain-Developer-Program-Project/blob/master/test/testSongRegistry.js)
     * Mocha and Chai promises were used. 
  * Lite-server was used to serve the front end application.
+ 
+ ## Challenges
+
+* Errors using Metamask.
+* Unit test debugging.
 
 ## Set-up and Initialization
 ### 1. Clone the project
@@ -58,8 +63,5 @@ Metamask can be used to get a visual representation of the local blockchain.Conn
 ```
 $ npm run dev
 ```
-## Challenges
 
-* Errors using Metamask.
-* Unit test debugging.
 
