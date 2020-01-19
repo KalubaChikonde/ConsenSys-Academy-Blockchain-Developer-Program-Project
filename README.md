@@ -61,3 +61,4 @@ $ npm run dev
   * Remix
  * Unit testing was done using javascript - see [testSongRegistry.js](https://github.com/KalubaChikonde/ConsenSys-Academy-Blockchain-Developer-Program-Project/blob/master/test/testSongRegistry.js)
     * Mocha and Chai promises were used. 
+ * Lite-server was used to serve the front end application.
