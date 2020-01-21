@@ -24,7 +24,7 @@ function kill() public onlyOwner onlyInEmergency {
 
 ## 2. Fail Early and Fail Loud
 
-The `require` keyword is used throughout the contract to checck as early as possible whether certain conditions are met. This helps reduce unnecessary code execution. 
+The `require` keyword is used throughout the contract to check as early as possible whether certain conditions are met. This helps reduce unnecessary code execution. 
 
 ```
 //SongRegistry.sol
